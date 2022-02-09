@@ -11,7 +11,7 @@ This is a test / interview implementation, written in go. Author's kinda first g
 
 
 ## Refs
-ref: https://gobyexample.com/worker-pools
-ref: https://gobyexample.com/testing-and-benchmarking
-ref: https://gobyexample.com/timeouts
-package: https://pkg.go.dev/math/big
+- ref: https://gobyexample.com/worker-pools
+- ref: https://gobyexample.com/testing-and-benchmarking
+- ref: https://gobyexample.com/timeouts
+- package: https://pkg.go.dev/math/big
