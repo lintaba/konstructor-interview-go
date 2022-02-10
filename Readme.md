@@ -68,3 +68,4 @@ A kiírást a `parityChecker`, C-ben írt paritás-ellenörzőn is átfuttatja, 
 - ref: https://gobyexample.com/testing-and-benchmarking
 - ref: https://gobyexample.com/timeouts
 - package: https://pkg.go.dev/math/big
+
