@@ -13,6 +13,8 @@ package main
 import "C"
 import "math/big"
 
+// IsOdd determines if a number is odd (ie 1, 3). Returns `false` for even numbers (ie 0, 2)
+//    Uses a C module as internal implementation.
 func IsOdd(num *big.Int) bool {
 
 	return C.isOdd(C.CString(num.String())) > 0

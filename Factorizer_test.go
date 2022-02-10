@@ -26,7 +26,7 @@ func TestWorker(t *testing.T) {
 		i.SetString(tt.expected, 10)
 		fc := NewFactorizer()
 
-		go fc.AsyncWorker(tt.n, stopSign, out)
+		go fc.asyncWorker(tt.n, stopSign, out)
 
 		output := <-out
 
@@ -40,7 +40,7 @@ func TestWorkerInvalid(t *testing.T) {
 		}
 	}()
 	fc := NewFactorizer()
-	fc.AsyncWorker(-1, make(chan bool), make(chan *big.Int))
+	fc.asyncWorker(-1, make(chan bool), make(chan *big.Int))
 }
 
 func TestSlowWorker(t *testing.T) {
@@ -117,7 +117,7 @@ func TestOrderWorks(t *testing.T) {
 	inputCopyChan := make(chan int64, context.TasksToGenerate)
 	outputChanChan := make(chan chan *big.Int, workerCount)
 
-	context.workerManager(workerCount, inputChan, outputChanChan)
+	context.StartWorkers(workerCount, inputChan, outputChanChan)
 
 	for i := 0; i < context.TasksToGenerate; i++ {
 		var input = int64(i)
